@@ -6,12 +6,11 @@ LOCAL_DATASET_DIR=/usr/src/app/covid-ai2
 LOCAL_DATASET_PATH=${LOCAL_DATASET_DIR}/${DATASET_NAME}
 LOCAL_CACHE_PATH=${LOCAL_DATASET_DIR}/.cache/${DATASET_NAME}
 
-echo "I AM HERE"
 # check if the directory does not exists or is empty
 if [[ ! -d ${LOCAL_DATASET_PATH} || -z "$(ls -A ${LOCAL_DATASET_PATH})" ]]
 then
     echo "INFO: Downloading dataset from ${DATASET_URL})..."
-    wget  -O ${DATASET_URL} || exit 1
+    wget ${DATASET_URL} || exit 1
     unzip demo_data.zip -d ${LOCAL_DATASET_DIR}/${DATASET_NAME}
 else
     echo "INFO: loading existing dataset from ${LOCAL_DATASET_PATH}..."
@@ -21,7 +20,7 @@ fi
 if [[ ! -d ${LOCAL_CACHE_PATH} && ! -z "${CACHE_URL}" ]]
 then
     echo "INFO: Downloading cache from ${CACHE_URL})..."
-    wget  -O ${DATASET_URL} || exit 1
+    wget ${DATASET_URL} || exit 1
     unzip demo_data.zip -d ${LOCAL_DATASET_DIR}/${DATASET_NAME}
 elif [[ -d ${LOCAL_CACHE_PATH} ]]
 then
