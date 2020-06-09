@@ -10,6 +10,7 @@ services:
             # makes debugging easier.
             - 'PYTHONUNBUFFERED=1'
             - 'LOG_LEVEL=DEBUG'
+        stdin_open: true # docker run -i
     proxy:
         build: ./proxy
         ports:
