@@ -1,4 +1,5 @@
-#FROM ubuntu
+
+# installation
 FROM ubuntu AS builder
 
 RUN apt-get update
@@ -8,7 +9,7 @@ RUN apt-get install -y git
 RUN apt-get install python3.7
 COPY . .
 
-# INSTALL CONDA
+# INTALL CONDA
 
 ENV PATH="/root/miniconda3/bin:${PATH}"
 ARG PATH="/root/miniconda3/bin:${PATH}"
@@ -25,9 +26,9 @@ RUN wget \
 RUN sh ./install.sh
 
 
-# FROM builder
+FROM builder
 
-# get python files
+# get python files for the demo
 
 WORKDIR /usr/src/app
 RUN git clone https://github.com/Shaul1321/covid-ai2 #redo
