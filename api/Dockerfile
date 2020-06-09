@@ -1,7 +1,5 @@
 
 # installation
-FROM ubuntu AS builder
-
 RUN apt-get update
 RUN apt-get -y install zip
 RUN apt-get -y install unzip
@@ -24,9 +22,6 @@ RUN wget \
     && rm -f Miniconda3-latest-Linux-x86_64.sh 
     
 RUN sh ./install.sh
-
-
-FROM builder
 
 # get python files for the demo
 
