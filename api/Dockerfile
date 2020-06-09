@@ -1,8 +1,5 @@
-#FROM covid-demo-basis
-
-# installation
-
-FROM ubuntu
+#FROM ubuntu
+FROM ubuntu AS builder
 
 RUN apt-get update
 RUN apt-get -y install zip
@@ -11,7 +8,7 @@ RUN apt-get install -y git
 RUN apt-get install python3.7
 COPY . .
 
-# INTALL CONDA
+# INSTALL CONDA
 
 ENV PATH="/root/miniconda3/bin:${PATH}"
 ARG PATH="/root/miniconda3/bin:${PATH}"
@@ -26,6 +23,9 @@ RUN wget \
     && rm -f Miniconda3-latest-Linux-x86_64.sh 
     
 RUN sh ./install.sh
+
+
+# FROM builder
 
 # get python files
 
