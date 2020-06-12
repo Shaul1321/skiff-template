@@ -5,7 +5,6 @@ RUN apt-get -y install zip
 RUN apt-get -y install unzip
 RUN apt-get install -y git
 RUN apt-get install python3.7
-COPY . .
 
 # INTALL CONDA
 
@@ -20,18 +19,24 @@ RUN wget \
     && mkdir /root/.conda \
     && bash Miniconda3-latest-Linux-x86_64.sh -b \
     && rm -f Miniconda3-latest-Linux-x86_64.sh 
-    
+
+WORKDIR /usr/src/app
+
+COPY install.sh .
+COPY requirements.txt .
+COPY download_bert_model.py .
 RUN sh ./install.sh
 
 # get python files for the demo
 
-WORKDIR /usr/src/app
 RUN git clone https://github.com/Shaul1321/covid-ai2 #redo
 
 WORKDIR /usr/src/app/covid-ai2
-
+RUN ls
 # download data & run streamlit
 
 EXPOSE 8080
-COPY . .
+COPY startup.sh .
+RUN echo "HERE"
+RUN ls
 CMD ["bash", "startup.sh"]
