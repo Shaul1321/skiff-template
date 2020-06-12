@@ -6,7 +6,7 @@ RUN apt-get -y install unzip
 RUN apt-get install -y git
 RUN apt-get install python3.7
 
-# INTALL CONDA
+# INSTALL CONDA
 
 ENV PATH="/root/miniconda3/bin:${PATH}"
 ARG PATH="/root/miniconda3/bin:${PATH}"
@@ -32,11 +32,8 @@ RUN sh ./install.sh
 RUN git clone https://github.com/Shaul1321/covid-ai2 #redo
 
 WORKDIR /usr/src/app/covid-ai2
-RUN ls
 # download data & run streamlit
 
 EXPOSE 8080
 COPY startup.sh .
-RUN echo "HERE"
-RUN ls
 CMD ["bash", "startup.sh"]
