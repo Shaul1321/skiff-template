@@ -3,8 +3,6 @@ services:
     api:
         build: ./api 
         container_name: covid-search-demo
-        volumes:
-            - './api:/usr/src/app/covid-ai2'
         environment:
             # This ensures that errors are printed as they occur, which
             # makes debugging easier.
