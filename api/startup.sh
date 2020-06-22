@@ -33,4 +33,4 @@ fi
 
 ls -lh
 pwd
-streamlit run demo.py --server.port 8080
+streamlit run demo.py --server.enableCORS false
