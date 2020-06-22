@@ -34,7 +34,6 @@ RUN git clone https://github.com/Shaul1321/covid-ai2 #redo
 WORKDIR /usr/src/app/covid-ai2
 RUN ls
 # download data & run streamlit
-EXPOSE 8501
 COPY startup.sh .
 RUN ls
 CMD ["bash", "startup.sh"]
