@@ -1,5 +1,5 @@
 
-# skiff-template
+# CORD19 Neural-Symbolic Search
 
 Welcone to the SPIKE-SciBERT similarity search demo on the CORD-19 dataset. 
 
