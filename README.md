@@ -15,7 +15,7 @@ To start a version of the application locally for development purposes, run
 this command:
 
 ```
-~ docker-compose up --build
+docker-compose up --build
 ```
 
 This process launches 2 services, the `api` and a `proxy` responsible
