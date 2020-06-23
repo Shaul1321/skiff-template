@@ -19,7 +19,6 @@ this command:
 ```
 
 This process launches 2 services, the `api` and a `proxy` responsible
-for forwarding traffic to the appropriate services. You'll see output
-from each.
+for forwarding traffic to the appropriate services.
 
 The demo runs on `localhost:8080`.
