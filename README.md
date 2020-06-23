@@ -18,7 +18,7 @@ this command:
 ~ docker-compose up --build
 ```
 
-This process launches 3 services, the `api` and a `proxy` responsible
+This process launches 2 services, the `api` and a `proxy` responsible
 for forwarding traffic to the appropriate services. You'll see output
 from each.
 
