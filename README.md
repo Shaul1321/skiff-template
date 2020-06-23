@@ -21,4 +21,4 @@ this command:
 This process launches 2 services, the `api` and a `proxy` responsible
 for forwarding traffic to the appropriate services.
 
-The demo runs on `localhost:8080`.
+Downloading the model and the data takes some time. Once ready, the demo runs on `localhost:8080`.
